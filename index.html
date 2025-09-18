@@ -139,5 +139,80 @@
   <p>© 2025 Saim Hussain | All rights reserved</p>
 </footer>
 
-</body>
+<script>
+  fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('name').textContent = data.name;
+      document.getElementById('title').textContent = data.title;
+      document.getElementById('objective').textContent = data.objective;
+      document.getElementById('experience').textContent = data.experience;
+      document.getElementById('about').textContent = data.about;
+
+      data.education.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        document.getElementById('education').appendChild(li);
+      });
+
+      data.skills.forEach(skill => {
+        const li = document.createElement('li');
+        li.textContent = skill;
+        document.getElementById('skills').appendChild(li);
+      });
+
+      data.languages.forEach(lang => {
+        const li = document.createElement('li');
+        li.textContent = lang;
+        document.getElementById('languages').appendChild(li);
+      });
+
+      for (const key in data.personal) {
+        const li = document.createElement('li');
+        li.textContent = `${key}: ${data.personal[key]}`;
+        document.getElementById('personal').appendChild(li);
+      }
+    });
+</script>
+</body><header>
+  <h1 id="name"></h1>
+  <p id="title"></p>
+</header>
+
+<section>
+  <h2>Objective</h2>
+  <p id="objective"></p>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <ul id="education"></ul>
+</section>
+
+<section>
+  <h2>Experience</h2>
+  <p id="experience"></p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <ul id="skills"></ul>
+</section>
+
+<section>
+  <h2>Languages</h2>
+  <ul id="languages"></ul>
+</section>
+
+<section>
+  <h2>About Me</h2>
+  <p id="about"></p>
+</section>
+
+<section>
+  <h2>Personal Information</h2>
+  <ul id="personal"></ul>
+</section>
+
 </html>
+
