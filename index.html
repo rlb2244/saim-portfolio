@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Saim Hussain - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
-  <style>section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-in-out;
-}
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+  <style>
+    section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-in-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     body {
       margin: 0;
@@ -82,83 +83,59 @@ section.visible {
 <body>
 
 <header>
-  <h1>Saim Hussain</h1>
-  <p>Electrical Engineer | Graphic Designer | Administrative Assistant</p>
+  <h1 id="name">Saim Hussain</h1>
+  <p id="title">Electrical Engineer | Graphic Designer | Administrative Assistant</p>
 </header>
 
-<section><div style="text-align:center; margin-top:20px;">
+<div style="text-align:center; margin-top:20px;">
   <button onclick="showSection('education')">Education</button>
   <button onclick="showSection('skills')">Skills</button>
   <button onclick="showSection('experience')">Experience</button>
 </div>
 
+<section>
   <h2>Objective</h2>
-  <p>I am a highly organized, detail-oriented individual with a strong commitment to achieving success in every project. I thrive in professional environments and handle challenges with motivation and confidence.</p>
+  <p id="objective"></p>
 </section>
 
 <section>
   <h2>Education</h2>
-  <ul>
-    <li>Matriculation – BISE Lahore (2015 - 2017)</li>
-    <li>Diploma of Electrical Engineering – BISE Gujranwala (2017 - 2020)</li>
-    <li>B.A (ADP) – University of Punjab (2023 - 2025)</li>
-  </ul>
+  <ul id="education"></ul>
 </section>
 
 <section>
   <h2>Experience</h2>
-  <p>Internship at Panther Tyres, Sheikhupura – Electrical Department (6 months, 2021)</p>
+  <p id="experience"></p>
 </section>
 
-<section><section>
+<section>
   <h2>Skills</h2>
   <input type="text" id="search" placeholder="Search skills..." />
   <ul id="skills"></ul>
 </section>
 
-  <h2>Skills</h2>
-  <ul>
-    <li>Adobe Photoshop</li>
-    <li>Graphic Designing</li>
-    <li>MS Office</li>
-    <li>Internet Applications</li>
-  </ul>
-</section>
-
 <section>
   <h2>Languages</h2>
-  <ul>
-    <li>English</li>
-    <li>Urdu</li>
-    <li>Punjabi</li>
-  </ul>
+  <ul id="languages"></ul>
 </section>
 
 <section>
   <h2>About Me</h2>
-  <p>I am actively seeking a position where I can apply my administrative skills and develop informational materials for the public. With over 6 years of professional experience, I am confident in my ability to communicate effectively and interact with diverse individuals.</p>
+  <p id="about"></p>
 </section>
 
 <section>
   <h2>Personal Information</h2>
-  <ul>
-    <li>Father's Name: Jamil Hussain</li>
-    <li>Date of Birth: January 18, 2002</li>
-    <li>Domicile: Sheikhupura, Punjab</li>
-    <li>Marital Status: Single</li>
-    <li>Religion: Islam</li>
-    <li>CNIC: 34103-5320712-3</li>
-    <li>Address: Housing Colony Z Block, Sheikhupura, Pakistan</li>
-    <li>Phone: +92 345 3531049</li>
-    <li>Email: saimhussain968@gmail.com</li>
-  </ul>
+  <ul id="personal"></ul>
 </section>
 
 <footer>
   <p>© 2025 Saim Hussain | All rights reserved</p>
 </footer>
 
+<!-- ✅ JavaScript Section -->
 <script>
+  // Load dynamic content from data.json
   fetch('data.json')
     .then(response => response.json())
     .then(data => {
@@ -193,7 +170,9 @@ section.visible {
       }
     });
 </script>
+
 <script>
+  // Scroll animation
   const sections = document.querySelectorAll('section');
   window.addEventListener('scroll', () => {
     sections.forEach(sec => {
@@ -203,7 +182,9 @@ section.visible {
     });
   });
 </script>
+
 <script>
+  // Search filter for skills
   document.getElementById('search').addEventListener('input', function() {
     const query = this.value.toLowerCase();
     const items = document.querySelectorAll('#skills li');
@@ -212,47 +193,16 @@ section.visible {
     });
   });
 </script>
-</body><header>
-  <h1 id="name"></h1>
-  <p id="title"></p>
-</header>
 
-<section>
-  <h2>Objective</h2>
-  <p id="objective"></p>
-</section>
+<script>
+  // Section filter buttons
+  function showSection(id) {
+    ['education', 'skills', 'experience'].forEach(sec => {
+      const section = document.getElementById(sec).parentElement;
+      section.style.display = sec === id ? 'block' : 'none';
+    });
+  }
+</script>
 
-<section>
-  <h2>Education</h2>
-  <ul id="education"></ul>
-</section>
-
-<section>
-  <h2>Experience</h2>
-  <p id="experience"></p>
-</section>
-
-<section>
-  <h2>Skills</h2>
-  <ul id="skills"></ul>
-</section>
-
-<section>
-  <h2>Languages</h2>
-  <ul id="languages"></ul>
-</section>
-
-<section>
-  <h2>About Me</h2>
-  <p id="about"></p>
-</section>
-
-<section>
-  <h2>Personal Information</h2>
-  <ul id="personal"></ul>
-</section>
-
+</body>
 </html>
-
-
-
