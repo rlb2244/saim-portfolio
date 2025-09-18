@@ -86,7 +86,12 @@ section.visible {
   <p>Electrical Engineer | Graphic Designer | Administrative Assistant</p>
 </header>
 
-<section>
+<section><div style="text-align:center; margin-top:20px;">
+  <button onclick="showSection('education')">Education</button>
+  <button onclick="showSection('skills')">Skills</button>
+  <button onclick="showSection('experience')">Experience</button>
+</div>
+
   <h2>Objective</h2>
   <p>I am a highly organized, detail-oriented individual with a strong commitment to achieving success in every project. I thrive in professional environments and handle challenges with motivation and confidence.</p>
 </section>
@@ -105,7 +110,12 @@ section.visible {
   <p>Internship at Panther Tyres, Sheikhupura – Electrical Department (6 months, 2021)</p>
 </section>
 
-<section>
+<section><section>
+  <h2>Skills</h2>
+  <input type="text" id="search" placeholder="Search skills..." />
+  <ul id="skills"></ul>
+</section>
+
   <h2>Skills</h2>
   <ul>
     <li>Adobe Photoshop</li>
@@ -193,6 +203,15 @@ section.visible {
     });
   });
 </script>
+<script>
+  document.getElementById('search').addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    const items = document.querySelectorAll('#skills li');
+    items.forEach(item => {
+      item.style.display = item.textContent.toLowerCase().includes(query) ? '' : 'none';
+    });
+  });
+</script>
 </body><header>
   <h1 id="name"></h1>
   <p id="title"></p>
@@ -234,5 +253,6 @@ section.visible {
 </section>
 
 </html>
+
 
 
