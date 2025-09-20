@@ -5,14 +5,84 @@ html {
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #0F0F0F;
   color: #FFFFFF;
+  background: url('images/sparkles-bg.png') no-repeat center center fixed;
+  background-size: cover;
+  animation: backgroundFlow 60s linear infinite;
+  position: relative;
+  z-index: 0;
 }
 
-/* ✅ Hero Section with Ben-style Background */
+/* ✨ Overlay for contrast */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+/* ✨ Background Flow Animation */
+@keyframes backgroundFlow {
+  0% {
+    background-position: center center;
+  }
+  50% {
+    background-position: center top;
+  }
+  100% {
+    background-position: center center;
+  }
+}
+
+/* ✅ Navigation Bar */
+.navigation-bar {
+  background-color: #0F0F0F;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+/* ✅ Navigation Menu */
+.navigation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation__item {
+  margin: 0;
+}
+
+.navigation__item a {
+  text-decoration: none;
+  color: #FF6F61;
+  font-weight: bold;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navigation__item--active a {
+  border-bottom: 2px solid #FF6F61;
+}
+
+.navigation__item a:hover {
+  color: #FF9A8B;
+  background-color: rgba(255, 111, 97, 0.1);
+}
+
+/* ✅ Hero Section */
 .hero {
   height: 100vh;
-  background: radial-gradient(circle at top left, #1A1A1A, #0F0F0F);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,47 +139,6 @@ body {
 
 .btn:hover {
   background-color: #FF9A8B;
-}
-
-/* ✅ Navigation */
-.navigation-bar {
-  background-color: #0F0F0F;
-  padding: 10px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
-}
-
-.navigation {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* ✅ allow wrapping on small screens */
-  gap: 10px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navigation__item {
-  margin: 0 15px;
-}
-
-.navigation__item a {
-  text-decoration: none;
-  color: #FF6F61;
-  font-weight: bold;
-  transition: color 0.3s ease;
-  padding: 8px 12px;
-  font-size: 1rem;
-}
-
-.navigation__item a:hover {
-  color: #FF9A8B;
-}
-
-.navigation__item--active a {
-  border-bottom: 2px solid #FF6F61;
 }
 
 /* ✅ Sections */
@@ -294,17 +323,13 @@ body {
   }
 
   .navigation {
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-  }
-
-  .navigation__item {
-    margin: 0;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .navigation__item a {
-    padding: 8px 12px;
     font-size: 0.9rem;
+    padding: 6px 10px;
   }
 }
