@@ -263,7 +263,11 @@ body {
 
   .hero h1,
   .heading h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .heading p {
+    font-size: 1rem;
   }
 
   .section h2 {
@@ -272,5 +276,11 @@ body {
 
   .btn {
     padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .scroll-indicator {
+    font-size: 1.5rem;
+    margin-top: 10px;
   }
 }
