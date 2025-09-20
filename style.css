@@ -9,6 +9,7 @@ body {
   background: url('images/sparkles-bg.png') no-repeat center center fixed;
   background-size: cover;
   animation: backgroundFlow 60s linear infinite;
+  will-change: background-position;
   position: relative;
   z-index: 0;
 }
