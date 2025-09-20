@@ -17,7 +17,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: 10px; /* 🔧 tighter spacing for mobile */
   position: relative;
   overflow: hidden;
 }
@@ -49,6 +49,11 @@ body {
   font-size: 1.2rem;
   margin-bottom: 20px;
   color: #B0B0B0;
+}
+
+.heading a.btn {
+  display: inline-block; /* 🔧 center buttons */
+  margin: 5px 10px;
 }
 
 /* ✅ Buttons */
@@ -263,7 +268,7 @@ body {
 
   .hero h1,
   .heading h1 {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* 🔧 improved scaling */
   }
 
   .heading p {
@@ -282,5 +287,9 @@ body {
   .scroll-indicator {
     font-size: 1.5rem;
     margin-top: 10px;
+  }
+
+  .section {
+    padding: 40px 15px; /* 🔧 tighter section spacing */
   }
 }
