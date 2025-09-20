@@ -6,34 +6,35 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   color: #FFFFFF;
-  background: url('images/sparkles-bg.png') no-repeat center center fixed;
-  background-size: cover;
-  animation: backgroundFlow 60s linear infinite;
-  will-change: background-position;
+  background-color: #000000;
   position: relative;
   z-index: 0;
+  overflow: hidden;
 }
 
-/* ✨ Overlay for contrast */
+/* ✨ Sparkles Overlay */
 body::before {
   content: "";
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: url('images/sparkles-bg.png') repeat;
+  background-size: cover;
+  opacity: 0.3;
   z-index: -1;
+  animation: sparkleDrift 60s linear infinite;
 }
 
-/* ✨ Background Flow Animation */
-@keyframes backgroundFlow {
+/* ✨ Sparkle Flow Animation */
+@keyframes sparkleDrift {
   0% {
-    background-position: center center;
+    transform: translateY(0);
   }
   50% {
-    background-position: center top;
+    transform: translateY(-20px);
   }
   100% {
-    background-position: center center;
+    transform: translateY(0);
   }
 }
 
