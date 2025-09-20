@@ -261,7 +261,8 @@ body {
     flex-direction: column;
   }
 
-  .hero h1 {
+  .hero h1,
+  .heading h1 {
     font-size: 2rem;
   }
 
