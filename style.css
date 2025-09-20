@@ -9,16 +9,7 @@ body {
   color: #FFFFFF;
 }
 
-/* ✅ Hero Section */
-.hero {
-  height: 100vh;
-  background-color: #0F0F0F;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-}
+/* ✅ Hero Section with Ben-style Background */
 .hero {
   height: 100vh;
   background: radial-gradient(circle at top left, #1A1A1A, #0F0F0F);
@@ -29,6 +20,23 @@ body {
   padding: 20px;
   position: relative;
   overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,111,97,0.2), transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.heading {
+  position: relative;
+  z-index: 1;
 }
 
 .heading h1 {
@@ -265,4 +273,3 @@ body {
     padding: 8px 16px;
   }
 }
-
