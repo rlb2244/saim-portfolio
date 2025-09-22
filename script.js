@@ -14,21 +14,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     typeWriter();
   }
+
+  // ✅ Scroll Reveal Trigger
+  function revealOnScroll() {
+    const sections = document.querySelectorAll(".section");
+    sections.forEach(section => {
+      const top = section.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (top < windowHeight - 100) {
+        section.classList.add("reveal");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll(); // Trigger on load
 });
 
-// ✅ Scroll Reveal Animation
-function revealOnScroll() {
-  const sections = document.querySelectorAll(".section");
-
-  sections.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-
-    if (top < windowHeight - 100) {
-      section.classList.add("reveal");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
