@@ -240,7 +240,7 @@ body {
   .navigation {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: nowrap;
     overflow-x: auto;
     white-space: nowrap;
@@ -249,6 +249,7 @@ body {
   }
 
   .navigation__item {
+    margin: 0;
     flex: 0 0 auto;
   }
 
@@ -266,7 +267,6 @@ body {
     color: #FF9A8B;
   }
 }
-
 
 
 
@@ -308,7 +308,6 @@ body {
   .contact-form textarea {
     font-size: 0.9rem;
   }
-
 
 
 
