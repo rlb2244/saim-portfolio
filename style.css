@@ -29,7 +29,7 @@ body {
   border-radius: 50%;
   background: radial-gradient(circle, #FF6F61, #FF9A8B);
   opacity: 0.9;
-  animation: sparkleFloat 8s linear infinite;
+  animation: sparkleFloat 16s linear infinite;
 }
 
 @keyframes sparkleFloat {
@@ -309,5 +309,6 @@ body {
     font-size: 0.9rem;
   }
 }
+
 
 
