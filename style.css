@@ -9,6 +9,12 @@ body {
   color: #FFFFFF;
 }
 
+/* ✅ Dark Mode Base (for future toggle) */
+body.dark-mode {
+  background-color: #0A0A0A;
+  color: #FF6F61;
+}
+
 /* ✅ Hero Section */
 .hero {
   height: 100vh;
@@ -20,7 +26,8 @@ body {
   padding: 20px;
 }
 
-.heading h1 {
+.heading h1,
+#typed-text {
   font-size: 2.5rem;
   margin-bottom: 10px;
   color: #FFFFFF;
@@ -238,7 +245,8 @@ body {
     flex-direction: column;
   }
 
-  .hero h1 {
+  .hero h1,
+  #typed-text {
     font-size: 2rem;
   }
 
